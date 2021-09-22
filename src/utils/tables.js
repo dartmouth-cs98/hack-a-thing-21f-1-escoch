@@ -69,6 +69,13 @@ const tables  = {
 		'right-mid': '',
 		middle: ' '
 	},
+	sortingKeys_V: {
+		country: 'country',
+		total: 'total',
+		'vaccines-today': 'daily',
+		totalPerHundred: 'totalPerHundred',
+		dailyPerMillion: 'dailyPerMillion'
+	},
 	sortingKeys: {
 		country: 'country',
 		cases: 'cases',
@@ -87,6 +94,13 @@ const tables  = {
 		deaths: 'deaths',
 		'deaths-today': 'todayDeaths',
 		active: 'active'
+	},
+	sortingStateKeys_V: {
+		state: 'state',
+		total: 'total',
+		'vaccines-today': 'daily',
+		totalPerHundred: 'totalPerHundred',
+		dailyPerMillion: 'dailyPerMillion'
 	},
     vaccines: [
         `#`,

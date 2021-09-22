@@ -17,7 +17,8 @@ export default async (
 		sortStatesValidation(sortBy, spinner);
 		try {
 			const response = await (
-				axios.get(`https://corona.lmao.ninja/v2/states`)
+				axios.get(`https://disease.sh/v3/covid-19/vaccine/coverage/states?lastdays=${1}&fullData=true
+				`)
 			);
 			
 			let allStates = response.data;
@@ -29,20 +30,23 @@ export default async (
 			const format = numberFormat(json);
 	
 			// Sort & reverse.
-			const direction = reverse ? 'asc' : 'desc';
-			allStates = orderBy(allStates, [table.sortingStateKeys[sortBy]], [direction]);
-	
+			const direction = reverse ? 'asc' : 'desc'
+			allStates = orderBy(allStates, `timeline[0].${table.sortingStateKeys_V[sortBy]}`, [direction]);
 			// Push selected data.
 			allStates.map((oneState, count) => {
-				output.push([
-					count + 1,
-					oneState.state,
-					format(oneState.cases),
-					format(oneState.todayCases),
-					format(oneState.deaths),
-					format(oneState.todayDeaths),
-					format(oneState.active)
-				]);
+				const timeline = oneState.timeline;
+				timeline.forEach(day => {
+					output.push([
+						count + 1,
+						oneState.state,
+						format(day.date),
+						format(day.total),
+						format(day.totalPerHundred),
+						format(day.dailyPerMillion),
+						format(day.daily)
+					]);
+				});
+				
 			});
 	
 			spinner.stopAndPersist();

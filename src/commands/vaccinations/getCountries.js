@@ -14,9 +14,9 @@ export default async (
     { sortBy, limit, reverse, bar, json }
 ) => {
     if (!countryName && !states && !bar) {
-        // sortValidation(sortBy, spinner); TODO
+        sortValidation(sortBy, spinner); 
         try {
-           const response = await axios.get(`https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=${2}&fullData=true
+           const response = await axios.get(`https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=${1}&fullData=true
            `);
             let allCountries = response.data;
 
@@ -25,11 +25,11 @@ export default async (
 
             // Sort & reverse.
             const direction = reverse ? 'asc' : 'desc';
-            // allCountries = orderBy(  TODO: 
-            //     allCountries,
-            //     [table.sortingKeys[sortBy]],
-            //     [direction]
-            // );
+            allCountries = orderBy(  
+                allCountries,
+                `timeline[0].${table.sortingKeys_V[sortBy]}`,
+                [direction]
+            );
 
             // Limit.
             allCountries = allCountries.slice(0, limit);

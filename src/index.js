@@ -90,7 +90,7 @@ const options = { sortBy, limit, reverse, minimal, chart, log, json, bar };
 	spinner.start();
 	const lastUpdated = await getWorldWide_V(output, states, json);
 	await getCountry_V(spinner, output, states, country, options);
-	// await getStates_V(spinner, output, states, options);
+	await getStates_V(spinner, output, states, options);
 	await getCountries_V(spinner, output, states, country, options);
 	// await getCountryChart(spinner, country, options);
 	// await getBar(spinner, country, states, options);
