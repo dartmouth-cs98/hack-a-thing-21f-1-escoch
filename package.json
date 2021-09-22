@@ -1,0 +1,55 @@
+{
+  "name": "vaccine-cli",
+  "version": "1.0.0",
+  "description": "Data reports for COVID-19 vaccinations",
+  "main": "src/index.js",
+  "preferGlobal": true,
+  "bin": {
+    "vaccine-cli": "src/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cli",
+    "amazing-cli"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dartmouth-cs98/hack-a-thing-21f-1-escoch.git"
+  },
+  "author": "Elorm Coch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dartmouth-cs98/hack-a-thing-21f-1-escoch/issues"
+  },
+  "homepage": "https://github.com/dartmouth-cs98/hack-a-thing-21f-1-escoch#readme",
+  "dependencies": {
+    "arg": "^5.0.1",
+    "await-to-js": "^3.0.0",
+    "axios": "^0.21.4",
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.10.1",
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "cli-handle-error": "^4.4.0",
+    "cli-table3": "^0.6.0",
+    "cli-welcome": "^2.2.2",
+    "comma-number": "^2.1.0",
+    "commander": "^8.2.0",
+    "execa": "^5.1.1",
+    "inquirer": "^8.1.5",
+    "listr": "^0.14.3",
+    "lodash.orderby": "^4.6.0",
+    "log-symbols": "^5.0.0",
+    "meow": "^10.1.1",
+    "moment": "^2.29.1",
+    "ncp": "^2.0.0",
+    "ora": "^6.0.1",
+    "pkg-install": "^1.0.0"
+  },
+  "type": "module"
+}
