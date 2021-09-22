@@ -5,7 +5,7 @@ const { red, green, dim } = chalk;
 
 
 export default (sortBy, spinner) => {
-	if (sortBy !== 'cases') {
+	if (sortBy !== 'total') {
 		if (Object.keys(tables.sortingKeys_V).indexOf(sortBy) === -1) {
 			spinner.stop();
 			console.log(`${logSymbols.error} ${red(`Wrong sorting key!`)}`);
